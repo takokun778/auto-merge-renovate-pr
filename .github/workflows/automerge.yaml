@@ -6,7 +6,7 @@ on:
 jobs:
   auto-merge:
     runs-on: ubuntu-latest
-    if: startWith("${{ github.ref_name }}", "renovate/aquaproj-aqua-registry")
+    if: startWith("${{ github.ref_name }}", "renovate/aquaproj")
     steps:
       - name: Generate token
         id: generate_token
