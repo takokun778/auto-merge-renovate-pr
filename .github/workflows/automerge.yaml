@@ -21,7 +21,7 @@ jobs:
           PR_TITLE: ${{ github.event.pull_request.title }}
           GITHUB_TOKEN: ${{ steps.generate_token.outputs.token }}
         run: |
-          gh pr edit add "${PR_URL}" --add-label "renovate"
+          gh pr edit "${PR_URL}" --add-label "renovate"
           gh pr review --approve "${PR_URL}"
           gh pr edit "${PR_URL}" -t "(auto merged) ${PR_TITLE}"
           gh pr merge --auto --merge "${PR_URL}"
