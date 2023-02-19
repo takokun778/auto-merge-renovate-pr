@@ -7,10 +7,10 @@ on:
 jobs:
   auto-merge:
     runs-on: ubuntu-latest
-    # if: startWith("${{ github.base_ref }}", "renovate/aquaproj") == true
+    # if: startWith("${{ github.head_ref }}", "renovate/aquaproj") == true
     steps:
       - name: Check branch
-        run: echo "${{ github.base_ref }}"
+        run: echo "${{ github.head_ref }}"
       - name: Generate token
         id: generate_token
         uses: tibdex/github-app-token@v1
