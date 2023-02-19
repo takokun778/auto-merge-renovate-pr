@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Check branch
         run: echo "${{ github.head_ref }}"
+      - name: Check starts with
+        run: echo "startsWith(${{ github.head_ref }}, 'renovate/aquaproj')"
       - name: Generate token
         id: generate_token
         uses: tibdex/github-app-token@v1
